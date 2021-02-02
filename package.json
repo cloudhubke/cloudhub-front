@@ -1,8 +1,8 @@
 {
-  "name": "cloud-front",
+  "name": "cloudhub-front",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cloudhubke/cloud-front.git"
+    "url": "https://github.com/cloudhubke/cloudhub-front.git"
   },
   "keywords": [
     "cloudhub"
@@ -10,11 +10,10 @@
   "author": "Bernard Gaitho <gaithoben@gmail.com> (http://github.com/cloudhubke)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cloudhubke/cloud-front/issues"
+    "url": "https://github.com/cloudhubke/cloudhub-front/issues"
   },
-  "homepage": "https://github.com/cloudhubke/cloud-front#readme",
+  "homepage": "https://github.com/cloudhubke/cloudhub-front#readme",
   "version": "0.0.1",
-  "private": true,
   "main": "dist/index.js",
   "files": [
     "dist"
