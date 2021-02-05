@@ -60,9 +60,11 @@ const ThemeProvider = ({ children, ...props }) => {
 
   if (!mountedComponent) return <div />;
 
+  const theme = getTheme({ mode: themeMode, ...props });
+
   return (
     <CloudThemeProvider
-      theme={getTheme({ mode: themeMode })}
+      theme={theme}
       themeMode={themeMode}
       themeToggler={themeToggler}
       {...props}
