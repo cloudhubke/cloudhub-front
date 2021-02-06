@@ -11,7 +11,8 @@ import { getLightColors, getDarkColors } from './palette';
 const getTheme = ({ mode, colors = {}, sizes = {}, fonts = {} }) =>
   responsiveFontSizes(
     createMuiTheme({
-      palette: mode === 'light' ? getLightColors(colors) : getDarkColors,
+      palette:
+        mode === 'light' ? getLightColors(colors) : getDarkColors(colors),
       layout: {
         contentWidth: 1236,
       },

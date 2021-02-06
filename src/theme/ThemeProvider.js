@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CloudThemeProvider from 'cloudhub-components/dist/theme/ThemeProvider';
 import { Paper, CssBaseline } from 'cloudhub-components/dist/mui/core';
 import getTheme from './getTheme';
+import './iconlibrary';
 
 import AOS from 'aos';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { NoSsr } from 'cloudhub-components/dist/mui/core';
@@ -29,10 +30,13 @@ const Icon = props => {
 
   const classes = useStyles();
 
+  let icon = `${fontIconClass}`.split(' ').map(c => `${c}`.replace('fa-', ''));
+
   return (
     <NoSsr>
-      <i
-        className={clsx('icon', fontIconClass, classes[size], className)}
+      <FontAwesomeIcon
+        icon={icon}
+        className={clsx('icon', classes[size], className)}
         style={{ color: fontIconColor }}
         {...rest}
       />

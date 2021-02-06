@@ -8,7 +8,10 @@ import {
   Typography,
   Button,
 } from 'cloudhub-components/dist/mui/core';
-import { ToggleButtonGroup, ToggleButton } from '@material-ui/lab';
+import {
+  ToggleButtonGroup,
+  ToggleButton,
+} from 'cloudhub-components/dist/mui/lab';
 import { Icon } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { Section, CardPricingStandard } from 'components/organisms';

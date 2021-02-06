@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem } from 'cloudhub-components/dist/mui/core';
-import Skeleton from '@material-ui/lab/Skeleton';
+import { Skeleton } from 'cloudhub-components/dist/mui/lab';
 
 const Loading = ({ className, ...rest }) => (
   <List className={className} {...rest}>

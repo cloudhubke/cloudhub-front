@@ -11,7 +11,7 @@ import {
   ListItemAvatar,
   ListItemText,
 } from 'cloudhub-components/dist/mui/core';
-import { CardBase } from 'components/organisms';
+import { CardBase } from '../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {

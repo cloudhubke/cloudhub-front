@@ -13,7 +13,7 @@
     "url": "https://github.com/cloudhubke/cloudhub-front/issues"
   },
   "homepage": "./",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -43,6 +43,11 @@
     ]
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.28",
+    "@fortawesome/free-brands-svg-icons": "5.13.0",
+    "@fortawesome/free-regular-svg-icons": "5.13.0",
+    "@fortawesome/free-solid-svg-icons": "5.13.0",
+    "@fortawesome/react-fontawesome": "0.1.9",
     "aos": "^2.3.4",
     "clsx": "^1.0.4",
     "history": "^4.9.0",
@@ -59,6 +64,9 @@
     "swiper": "^5.4.1",
     "validate.js": "^0.13.1"
   },
+  "peerDependencies": {
+    "cloudhub-components": ">=1.4.28"
+  },
   "devDependencies": {
     "@babel/cli": "7.2.0",
     "@babel/core": "7.2.0",
@@ -72,7 +80,7 @@
     "@typescript-eslint/parser": "^4.14.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.11.1",
-    "cloudhub-components": "^1.4.27",
+    "cloudhub-components": "^1.4.28",
     "cross-env": "^7.0.2",
     "eslint": "^7.18.0",
     "eslint-config-react-app": "^6.0.0",

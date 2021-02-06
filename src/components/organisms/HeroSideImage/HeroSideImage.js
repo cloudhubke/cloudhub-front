@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { colors, Grid } from 'cloudhub-components/dist/mui/core';
-import { Image } from 'components/atoms';
+import { Image } from '../../atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {

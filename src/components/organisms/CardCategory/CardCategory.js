@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
-import { CardBase, DescriptionListIcon } from 'components/organisms';
+import { CardBase, DescriptionListIcon } from '../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {

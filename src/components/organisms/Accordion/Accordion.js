@@ -13,7 +13,7 @@ import {
 } from 'cloudhub-components/dist/mui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import { LearnMoreLink } from 'components/atoms';
+import { LearnMoreLink } from '../../atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {

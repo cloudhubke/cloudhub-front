@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import Swiper from 'swiper';
 
-import { Image } from 'components/atoms';
+import { Image } from '../../atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {

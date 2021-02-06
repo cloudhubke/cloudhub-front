@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { Grid, Typography, Avatar } from 'cloudhub-components/dist/mui/core';
-import { CardBase } from 'components/organisms';
-import { LearnMoreLink } from 'components/atoms';
+import { CardBase } from '../../organisms';
+import { LearnMoreLink } from '../../atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {

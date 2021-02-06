@@ -9,8 +9,8 @@ import {
   IconButton,
 } from 'cloudhub-components/dist/mui/core';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import { IconAlternate } from 'components/molecules';
-import { CardBase } from 'components/organisms';
+import { IconAlternate } from '../../molecules';
+import { CardBase } from '../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {

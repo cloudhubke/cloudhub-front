@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { Divider } from 'cloudhub-components/dist/mui/core';
-import { Section } from 'components/organisms';
+import { Section } from '../../organisms';
 
 const useStyles = makeStyles(theme => ({
   root: {

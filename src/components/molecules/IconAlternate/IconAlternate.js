@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { Avatar, colors } from 'cloudhub-components/dist/mui/core';
-import { Icon } from 'components/atoms';
+import { Icon } from '../../atoms';
 
 const useStyles = makeStyles(theme => ({
   extraSmall: {
