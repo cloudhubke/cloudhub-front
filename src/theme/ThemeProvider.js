@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CloudThemeProvider from 'cloudhub-components/dist/theme/ThemeProvider';
 import { Paper, CssBaseline } from 'cloudhub-components/dist/mui/core';
 import getTheme from './getTheme';
-import './iconlibrary';
+import addIcons from './addIcons';
 
 import AOS from 'aos';
 
@@ -13,6 +13,89 @@ import '../assets/css/index.css';
 
 import 'swiper/css/swiper.min.css';
 import 'aos/dist/aos.css';
+
+const icons = [
+  'angle-right',
+  'chevron-down',
+  'chevron-up',
+  'quote-right',
+  'paper-plane',
+  'search',
+  'map-marker-alt',
+  'pen-nib',
+  'book-open',
+  'camera-retro',
+  'video',
+  'heartbeat',
+  'bullhorn',
+  'funnel-dollar',
+  'paint-brush',
+  'cloud-upload-alt',
+  'check-circle',
+  'book',
+  'briefcase',
+  'bolt',
+  'puzzle-piece',
+  'bullseye',
+  'clock',
+  'star',
+  'users',
+  'address-book',
+  'angellist',
+  'phone-alt',
+  'couch',
+  'pump-soap',
+  'dumbbell',
+  'wifi',
+  'soap',
+  'calendar-week',
+  'layer-group',
+  'check',
+  'folder',
+  'farstar',
+  'heart',
+  'graduation-cap',
+  'user-graduate',
+  'gift',
+  'money-bill-wave',
+  'trophy',
+  'cog',
+  'plug',
+  'lock',
+  'hand-holding-heart',
+  'plus',
+  'rocket',
+  'brain',
+  'comments',
+  'user',
+  'dollar-sign',
+  'sketch',
+  'code',
+  'cubes',
+  'palette',
+  'moon',
+  'play',
+  'pencil-alt',
+  'mouse-pointer',
+  'comment',
+  'sign-in-alt',
+  'share-square',
+  'laptop-code',
+  'mobile-alt',
+  'lightbulb',
+  'cogs',
+  'comment-dollar',
+  'calendar-alt',
+  'home',
+  'parking',
+  'bath',
+  'door-open',
+  'box-tissue',
+  'play-circle',
+  'question',
+];
+
+addIcons(icons);
 
 export const useDarkMode = () => {
   const [themeMode, setTheme] = useState('light');
