@@ -43,7 +43,7 @@ export const useDarkMode = () => {
   return [themeMode, themeToggler, mountedComponent];
 };
 
-const ThemeProvider = ({ children, ...props }) => {
+const ThemeProvider = ({ children, style, ...props }) => {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -74,7 +74,7 @@ const ThemeProvider = ({ children, ...props }) => {
     >
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Paper elevation={0}>
+      <Paper elevation={0} style={{ flex: 1, ...style }}>
         {typeof children === 'function'
           ? children({ themeMode, themeToggler })
           : children}

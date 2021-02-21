@@ -15,33 +15,49 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const schema = {
-  fullname: {
+  Fullname: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
       maximum: 128,
     },
   },
-  email: {
+  Phone: {
+    presence: { allowEmpty: false, message: 'is required' },
+    length: {
+      maximum: 20,
+      minimum: 10,
+    },
+    format: {
+      // prettier-ignore
+      // eslint-disable-next-line no-useless-escape
+      pattern: '^[+\s0-9]+$',
+      flags: 'i',
+      message: 'can only contain valid phone number',
+    },
+  },
+  Email: {
     presence: { allowEmpty: false, message: 'is required' },
     email: true,
     length: {
       maximum: 300,
     },
   },
-  message: {
+  Message: {
     presence: { allowEmpty: false, message: 'is required' },
   },
 };
 
-const ContactForm = () => {
+const INITIAL_STATE = {
+  isValid: false,
+  values: {},
+  touched: {},
+  errors: {},
+};
+
+const ContactForm = props => {
   const classes = useStyles();
 
-  const [formState, setFormState] = React.useState({
-    isValid: false,
-    values: {},
-    touched: {},
-    errors: {},
-  });
+  const [formState, setFormState] = React.useState(INITIAL_STATE);
 
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
@@ -72,15 +88,23 @@ const ContactForm = () => {
     }));
   };
 
+  const onSubmit = () => {
+    if (typeof props.onSubmit == 'function') {
+      props.onSubmit({ ...formState.values });
+      setFormState(INITIAL_STATE);
+    }
+  };
+
   const hasError = field =>
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
     <div className={classes.root}>
       <form
-        name="contact-form"
-        method="post"
-        action="/submition.html?contact-form-submit-success=true"
+        onSubmit={e => {
+          e.preventDefault();
+          onSubmit();
+        }}
       >
         <input type="hidden" name="form-name" value="contact-form" />
         <Grid container spacing={2}>
@@ -92,21 +116,36 @@ const ContactForm = () => {
               We carefully read and answer to all our emails.
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={12}>
             <TextField
               placeholder="Full Name"
               label="Full Name *"
               variant="outlined"
               size="medium"
-              name="fullname"
+              name="Fullname"
               fullWidth
               helperText={
-                hasError('fullname') ? formState.errors.fullname[0] : null
+                hasError('Fullname') ? formState.errors.Fullname[0] : null
               }
-              error={hasError('fullname')}
+              error={hasError('Fullname')}
               onChange={handleChange}
               type="text"
-              value={formState.values.fullname || ''}
+              value={formState.values.Fullname || ''}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              placeholder="Phone number"
+              label="Phone Number *"
+              variant="outlined"
+              size="medium"
+              name="Phone"
+              fullWidth
+              helperText={hasError('Phone') ? formState.errors.Phone[0] : null}
+              error={hasError('Phone')}
+              onChange={handleChange}
+              type="text"
+              value={formState.values.Phone || ''}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -115,13 +154,13 @@ const ContactForm = () => {
               label="E-mail *"
               variant="outlined"
               size="medium"
-              name="email"
+              name="Email"
               fullWidth
-              helperText={hasError('email') ? formState.errors.email[0] : null}
-              error={hasError('email')}
+              helperText={hasError('Email') ? formState.errors.Email[0] : null}
+              error={hasError('Email')}
               onChange={handleChange}
               type="email"
-              value={formState.values.email || ''}
+              value={formState.values.Email || ''}
             />
           </Grid>
           <Grid item xs={12}>
@@ -129,16 +168,16 @@ const ContactForm = () => {
               placeholder="Message"
               label="Message *"
               variant="outlined"
-              name="message"
+              name="Message"
               fullWidth
               helperText={
-                hasError('message') ? formState.errors.message[0] : null
+                hasError('Message') ? formState.errors.Message[0] : null
               }
-              error={hasError('message')}
+              error={hasError('Message')}
               onChange={handleChange}
               multiline
               rows={4}
-              value={formState.values.message || ''}
+              value={formState.values.Message || ''}
             />
           </Grid>
           <Grid item xs={12}>
@@ -151,6 +190,7 @@ const ContactForm = () => {
               type="submit"
               color="primary"
               disabled={!formState.isValid}
+              onClick={onSubmit}
             >
               Send
             </Button>
