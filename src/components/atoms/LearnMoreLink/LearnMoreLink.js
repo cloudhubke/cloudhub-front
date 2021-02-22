@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { Link } from 'cloudhub-components/dist/reach';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import { Typography, IconButton } from 'cloudhub-components/dist/mui/core';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
@@ -65,22 +66,21 @@ const LearnMoreLink = props => {
   );
 
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={clsx('learn-more-link', classes.root, className)}
       {...rest}
     >
       {children}
-    </a>
+    </Link>
   );
 };
 
 LearnMoreLink.defaultProps = {
   variant: 'subtitle1',
-  href: '#',
+  href: '/',
   typographyProps: {},
   iconProps: {},
-  component: 'a',
 };
 
 LearnMoreLink.propTypes = {
