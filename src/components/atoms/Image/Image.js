@@ -23,7 +23,7 @@ const Image = props => {
   const { src, srcSet, alt, lazy, lazyProps, className, ...rest } = props;
 
   const classes = useStyles();
-  if (window && lazy) {
+  if (global.window && lazy) {
     return (
       <LazyLoadImage
         className={clsx('image', classes.root, classes.dBlock, className)}
