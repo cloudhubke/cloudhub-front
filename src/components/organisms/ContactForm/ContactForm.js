@@ -112,9 +112,6 @@ const ContactForm = props => {
             <Typography variant="h4" align="center">
               <strong>Contact Us</strong>
             </Typography>
-            <Typography variant="h6" color="textSecondary" align="center">
-              We carefully read and answer to all our emails.
-            </Typography>
           </Grid>
           <Grid item sm={12}>
             <TextField
