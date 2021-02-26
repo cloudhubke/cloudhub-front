@@ -8,7 +8,7 @@ import {
 } from 'cloudhub-components/dist/mui/core';
 import validate from 'validate.js';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
   },
@@ -46,17 +46,17 @@ const ContactForm = () => {
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
 
-    setFormState(formState => ({
+    setFormState((formState) => ({
       ...formState,
       isValid: errors ? false : true,
       errors: errors || {},
     }));
   }, [formState.values]);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     event.persist();
 
-    setFormState(formState => ({
+    setFormState((formState) => ({
       ...formState,
       values: {
         ...formState.values,
@@ -72,7 +72,7 @@ const ContactForm = () => {
     }));
   };
 
-  const hasError = field =>
+  const hasError = (field) =>
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
@@ -87,9 +87,6 @@ const ContactForm = () => {
           <Grid item xs={12}>
             <Typography variant="h4" align="center">
               <strong>Contact Us</strong>
-            </Typography>
-            <Typography variant="h6" color="textSecondary" align="center">
-              We carefully read and answer to all our emails.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
