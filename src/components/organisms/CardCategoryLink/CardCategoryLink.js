@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { Link } from 'cloudhub-components/dist/reach';
 import { makeStyles } from 'cloudhub-components/dist/mui/styles';
 import {
   Grid,
@@ -93,8 +94,8 @@ const CardCategoryLink = props => {
             </Grid>
           )}
         </Grid>
-        <a
-          href={href}
+        <Link
+          to={href}
           className={clsx(
             'card-category-link__item',
             classes.categoryIconButton,
@@ -106,7 +107,7 @@ const CardCategoryLink = props => {
               style={{ color: color[500] }}
             />
           </IconButton>
-        </a>
+        </Link>
       </>
     </CardBase>
   );
@@ -114,7 +115,7 @@ const CardCategoryLink = props => {
 
 CardCategoryLink.defaultProps = {
   align: 'left',
-  href: '#',
+  href: '/',
   iconAlternateProps: {},
   titleProps: {},
   subtitleProps: {},
